@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#164e63">
+  <title>About | WeatherWise</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">⛅Weather<span>Wise</span></a>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="weather.html">Weather Details</a>
+        <a href="settings.html">Settings</a>
+        <a href="about.html" aria-current="page">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="connection-bar">
+    <div class="container">
+      <p id="connection-status" role="status"></p>
+    </div>
+  </div>
+
+  <main id="main" class="container narrow">
+    <section class="page-intro">
+      <p class="eyebrow">MEET WEATHERWISE</p>
+      <h1>Weather information made simple.</h1>
+      <p>
+        WeatherWise is a student weather application designed to make
+        everyday weather information clear, accessible and personal.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>What you can do</h2>
+      <ul class="content-list">
+        <li>Search for cities around the world.</li>
+        <li>Choose a matching location before requesting weather.</li>
+        <li>View current conditions and upcoming forecast intervals.</li>
+        <li>Switch between Celsius and Fahrenheit.</li>
+        <li>Choose which measurements appear.</li>
+        <li>Set an in-app high-temperature alert.</li>
+        <li>Revisit the latest saved weather when offline.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>How to get started</h2>
+      <ol class="content-list">
+        <li>Create an OpenWeather account and obtain an API key.</li>
+        <li>Enter your key on the Settings page.</li>
+        <li>Return to Home and search for a city.</li>
+        <li>Select the correct location from the search results.</li>
+        <li>Open Weather Details to explore the forecast.</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>Weather data and limitations</h2>
+      <p>
+        Weather information is supplied by
+        <a href="https://openweathermap.org/" target="_blank"
+           rel="noopener noreferrer">OpenWeather</a>.
+      </p>
+      <p>
+        Current conditions and forecasts are different products.
+        Forecast values are predictions and can change.
+        Always check the observation and retrieval times.
+      </p>
+      <p>
+        WeatherWise's temperature messages are personal threshold checks,
+        not official severe-weather warnings or emergency advice.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Offline access</h2>
+      <p>
+        After a successful online visit and service-worker installation,
+        the application can load its cached pages offline.
+        The latest successfully saved weather can also be displayed.
+      </p>
+      <p>
+        You cannot retrieve new weather or search for new locations offline.
+        Saved weather is labelled with its retrieval time.
+        Browser storage can be cleared or unavailable.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Privacy and storage</h2>
+      <p>
+        Display preferences and the latest weather result are stored locally
+        in your browser. Your API key is stored in this tab's session storage.
+      </p>
+      <p>
+        Searches contact OpenWeather directly. The homepage comment form
+        is a demonstration: it neither sends nor stores your comment,
+        name or email address.
+      </p>
+      <p>
+        This frontend demonstration does not hide API credentials from
+        the browser. A production version should protect credentials
+        through a server-side service.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>WeatherWise · Weather data provided by OpenWeather.</p>
+      <p id="offline-status" class="small" role="status"></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#164e63">
+  <title>Weather Details | WeatherWise</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">⛅Weather<span>Wise</span></a>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="weather.html" aria-current="page">Weather Details</a>
+        <a href="settings.html">Settings</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="connection-bar">
+    <div class="container">
+      <p id="connection-status" role="status"></p>
+    </div>
+  </div>
+
+  <main id="main" class="container">
+    <section class="page-intro">
+      <p class="eyebrow">THE FULL PICTURE</p>
+      <h1>Weather details</h1>
+<p>
+  Current conditions and a five-day forecast for the city you searched.
+</p>
+    </section>
+
+    <section class="panel" aria-labelledby="conditions-heading">
+      <div class="section-heading">
+        <h2 id="conditions-heading">Current conditions</h2>
+        <button id="refresh-weather" type="button">Refresh weather</button>
+      </div>
+
+      <p id="refresh-status" class="feedback" role="status"></p>
+
+      <div id="weather-details"></div>
+    </section>
+
+    
+<section class="panel" aria-labelledby="forecast-heading">
+  <h2 id="forecast-heading">Five-day forecast</h2>
+
+  <p id="forecast-location" class="forecast-location"></p>
+
+  <p class="muted">
+    Five available forecast dates for your selected location.
+    Each card summarises the available three-hour intervals.
+    The first or last day may be a partial day.
+  </p>
+
+  <p id="forecast-saved-notice" class="notice" hidden></p>
+
+  <div id="forecast-list" class="forecast-grid"></div>
+</section>
+
+    <p>
+      Looking for somewhere else?
+      <a href="index.html">Search another location</a>.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>WeatherWise · Weather data provided by OpenWeather.</p>
+      <p>Forecasts may change. Saved data is not a live update.</p>
+      <p id="offline-status" class="small" role="status"></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#164e63">
+  <meta name="description"
+        content="WeatherWise: current weather, forecasts and personalised weather settings.">
+  <title>WeatherWise | Home</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">⛅Weather<span>Wise</span></a>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="weather.html">Weather Details</a>
+        <a href="settings.html">Settings</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="connection-bar">
+    <div class="container">
+      <p id="connection-status" role="status"></p>
+    </div>
+  </div>
+
+  <main id="main" class="container">
+    <section class="hero">
+      <p class="eyebrow">YOUR DAY, BETTER PLANNED</p>
+      <h1>A clearer view of the weather.</h1>
+      <p>
+        Find current conditions and upcoming forecasts.
+        Personalise your dashboard and revisit your latest saved weather offline.
+      </p>
+    </section>
+
+    <section class="panel" aria-labelledby="search-heading">
+      <h2 id="search-heading">Search for a location</h2>
+
+      <p class="muted">
+        First visit <a href="settings.html">Settings</a> to enter your
+        OpenWeather API key.
+      </p>
+
+      <form id="search-form">
+        <label for="city">City or town</label>
+
+        <div class="search-row">
+          <input
+            id="city"
+            name="city"
+            type="search"
+            placeholder="For example: Johannesburg, ZA"
+            minlength="2"
+            maxlength="100"
+            autocomplete="off"
+            required
+          >
+          <button id="search-button" type="submit">Search weather</button>
+        </div>
+
+        <p class="hint">
+          Add a country code to narrow your search, such as London, GB.
+        </p>
+      </form>
+
+      <p id="search-status" class="feedback" role="status"></p>
+      <div id="location-results" class="location-results"></div>
+    </section>
+
+    <section
+      class="panel"
+      id="home-weather"
+      aria-labelledby="home-weather-heading"
+    >
+      <h2 id="home-weather-heading">Your weather</h2>
+      <div id="weather-summary"></div>
+    </section>
+
+    <section class="feature-grid" aria-label="WeatherWise features">
+      <article class="panel">
+        <h2>Plan ahead</h2>
+        <p>Explore upcoming forecast intervals on the Weather Details page.</p>
+      </article>
+
+      <article class="panel">
+        <h2>Make it yours</h2>
+        <p>Choose your units, visible measurements, theme and temperature alert.</p>
+      </article>
+
+      <article class="panel">
+        <h2>Keep the essentials</h2>
+        <p>View your last saved weather even when a fresh request is unavailable.</p>
+      </article>
+    </section>
+
+    <section class="panel" aria-labelledby="comment-heading">
+      <h2 id="comment-heading">Leave a comment</h2>
+
+      <p class="muted">
+        Demonstration form only. Comments are not sent to a server or stored.
+      </p>
+
+      <form id="comment-form">
+        <div class="form-grid">
+          <div>
+            <label for="comment-name">Name</label>
+            <input
+              id="comment-name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              minlength="2"
+              maxlength="80"
+              required
+            >
+          </div>
+
+          <div>
+            <label for="comment-email">Email address</label>
+            <input
+              id="comment-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              maxlength="150"
+              required
+            >
+          </div>
+        </div>
+
+        <label for="comment-message">Comment</label>
+        <textarea
+          id="comment-message"
+          name="message"
+          rows="5"
+          minlength="5"
+          maxlength="1000"
+          required
+        ></textarea>
+
+        <button type="submit">Submit comment</button>
+        <p id="comment-status" class="feedback" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>WeatherWise · Weather data provided by OpenWeather.</p>
+      <p>Check update times before relying on saved weather.</p>
+      <p id="offline-status" class="small" role="status"></p>
+    </div>
+  </footer>
+</body>
+</html>

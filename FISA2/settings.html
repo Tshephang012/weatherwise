@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#164e63">
+  <title>Settings | WeatherWise</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">⛅Weather<span>Wise</span></a>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="weather.html">Weather Details</a>
+        <a href="settings.html" aria-current="page">Settings</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="connection-bar">
+    <div class="container">
+      <p id="connection-status" role="status"></p>
+    </div>
+  </div>
+
+  <main id="main" class="container narrow">
+    <section class="page-intro">
+      <p class="eyebrow">YOUR WEATHER, YOUR WAY</p>
+      <h1>Settings</h1>
+      <p>Choose how WeatherWise looks and what information it displays.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="api-heading">
+      <h2 id="api-heading">OpenWeather API key</h2>
+
+      <p>
+        Enter your own API key to enable weather searches.
+        This demo keeps it only in this tab's session storage.
+      </p>
+
+      <p class="muted">
+        A browser API key is visible to the browser user.
+        Do not publish a private production key in your source code.
+      </p>
+
+      <form id="api-form">
+        <label for="api-key">API key</label>
+        <input
+          id="api-key"
+          name="apiKey"
+          type="password"
+          autocomplete="off"
+          spellcheck="false"
+          required
+        >
+
+        <div class="button-row">
+          <button type="submit">Save key for this session</button>
+          <button id="remove-key" class="secondary" type="button">
+            Remove key
+          </button>
+        </div>
+
+        <p id="api-status" class="feedback" role="status"></p>
+      </form>
+    </section>
+
+    <section class="panel" aria-labelledby="preferences-heading">
+      <h2 id="preferences-heading">Display and alert preferences</h2>
+
+      <form id="settings-form">
+        <label for="units">Temperature unit</label>
+        <select id="units" name="units">
+          <option value="metric">Celsius (°C)</option>
+          <option value="imperial">Fahrenheit (°F)</option>
+        </select>
+
+        <label for="theme">Appearance</label>
+        <select id="theme" name="theme">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+
+        <fieldset>
+          <legend>Measurements to display</legend>
+
+          <label class="check-label">
+            <input id="show-humidity" type="checkbox">
+            Humidity
+          </label>
+
+          <label class="check-label">
+            <input id="show-wind" type="checkbox">
+            Wind speed
+          </label>
+
+          <label class="check-label">
+            <input id="show-pressure" type="checkbox">
+            Atmospheric pressure
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Temperature alert</legend>
+
+          <label class="check-label">
+            <input id="enable-alerts" type="checkbox">
+            Show a high-temperature message inside the app
+          </label>
+
+          <label for="alert-threshold">Alert threshold, always in °C</label>
+          <input
+            id="alert-threshold"
+            type="number"
+            min="-80"
+            max="65"
+            step="1"
+            required
+          >
+
+          <p class="hint">
+            Alerts are checked when weather is displayed.
+            They are not background notifications or official weather warnings.
+          </p>
+        </fieldset>
+
+        <button type="submit">Save preferences</button>
+        <p id="settings-status" class="feedback" role="status"></p>
+      </form>
+    </section>
+
+    <section class="panel" aria-labelledby="storage-heading">
+      <h2 id="storage-heading">Saved weather</h2>
+      <p>
+        Clear the most recently saved location, current conditions and forecast.
+        Your display preferences will remain.
+      </p>
+
+      <button id="clear-weather" class="danger" type="button">
+        Clear saved weather
+      </button>
+
+      <p id="storage-status" class="feedback" role="status"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>WeatherWise · Weather data provided by OpenWeather.</p>
+      <p id="offline-status" class="small" role="status"></p>
+    </div>
+  </footer>
+</body>
+</html>
